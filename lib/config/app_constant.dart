@@ -6,4 +6,8 @@ class AppRoute {
   // At Auth Page
   static const String login = '/login';
   static const String register = '/register';
+
+  static const String connectBluetooth = '/connectBluetooth';
+
+  static const String licenses = '/licenses';
 }

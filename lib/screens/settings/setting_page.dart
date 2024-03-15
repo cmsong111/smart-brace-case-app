@@ -55,6 +55,13 @@ List<SettingItem> settingList = [
     onTap: (BuildContext context) {},
   ),
   SettingItem(
+      title: 'Licenses',
+      subtitle: 'Open source licenses',
+      icon: const Icon(Icons.description),
+      onTap: (BuildContext context) {
+        Navigator.pushNamed(context, AppRoute.licenses);
+      }),
+  SettingItem(
     title: 'Logout',
     subtitle: 'Logout from this app',
     icon: const Icon(Icons.logout),

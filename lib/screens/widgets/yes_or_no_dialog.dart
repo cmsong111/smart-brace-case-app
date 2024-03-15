@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-void yesOrNoDialog(BuildContext context, String message,bool doPop, Function onYes) {
+void yesOrNoDialog(
+    BuildContext context, String message, bool doPop, Function onYes) {
   showDialog(
     context: context,
     builder: (context) {
