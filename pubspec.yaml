@@ -39,6 +39,7 @@ dependencies:
   fluttertoast: ^8.2.4
   flutter_blue_plus: ^1.31.16
   provider: ^6.1.2
+  fl_chart: ^0.66.2
 
   firebase_auth: ^4.17.9
   firebase_core: ^2.27.1
