@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_brace_case/screens/peripheral/peripheral_page.dart';
 import 'package:smart_brace_case/screens/profile/profile_page.dart';
+import 'package:smart_brace_case/screens/statistics/statistics_page.dart';
 
 import 'dashboard/dashboard_page.dart';
 
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     DashBoardPage(),
-    PeripheralPage(),
+    StatisticsPage(),
     ProfilePage()
   ];
 
@@ -50,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bluetooth),
-            label: 'Peripheral',
+            icon: Icon(Icons.bar_chart),
+            label: 'Statistics',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

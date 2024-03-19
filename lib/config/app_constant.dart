@@ -10,4 +10,6 @@ class AppRoute {
   static const String connectBluetooth = '/connectBluetooth';
 
   static const String licenses = '/licenses';
+
+  static const String profilePageEdit = '/profilePageEdit';
 }

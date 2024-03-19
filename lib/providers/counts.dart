@@ -9,4 +9,14 @@ class Counts with ChangeNotifier {
     _counter++;
     notifyListeners();
   }
+
+
+  bool _isWearing = false;
+
+  bool get isWearing => _isWearing;
+
+  void changeWearingStatus() {
+    _isWearing = !_isWearing;
+    notifyListeners();
+  }
 }

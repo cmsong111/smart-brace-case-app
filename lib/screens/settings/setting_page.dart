@@ -34,13 +34,23 @@ List<SettingItem> settingList = [
     title: 'Profile',
     subtitle: 'Edit your profile',
     icon: const Icon(Icons.person),
-    onTap: (BuildContext context) {},
+    onTap: (BuildContext context) {
+      Navigator.pushNamed(context, AppRoute.profilePageEdit);
+    },
   ),
   SettingItem(
     title: 'Notification',
     subtitle: 'Notification setting',
     icon: const Icon(Icons.notifications),
     onTap: (BuildContext context) {},
+  ),
+  SettingItem(
+    title: "Bluetooth Setting",
+    subtitle: "Bluetooth setting",
+    icon: const Icon(Icons.bluetooth),
+    onTap: (BuildContext context) {
+      Navigator.pushNamed(context, AppRoute.connectBluetooth);
+    }
   ),
   SettingItem(
     title: 'Security',
