@@ -19,7 +19,7 @@ class DashBoardPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 10, 0),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: ListView(
           children: [
             // 개인 프로필
@@ -61,7 +61,7 @@ class DashBoardPage extends StatelessWidget {
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   '교정기 착용 시간',
@@ -81,8 +81,61 @@ class DashBoardPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TodayWearIndicatorWidget(),
+            const SizedBox(height: 20),
+            Text(
+              '교정기 기기 정보',
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            const SizedBox(height: 10),
+            GridView.count(
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              mainAxisSpacing: 5,
+              crossAxisSpacing: 5,
+              childAspectRatio: 2.5,
+              children: const <Widget>[
+                Card(
+                  child: Center(
+                    child: ListTile(
+                      title: Text('교정기 종류'),
+                      subtitle: Text('치아 유지 장치'),
+                      leading: Icon(Icons.widgets),
+                      isThreeLine: true,
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Center(
+                    child: ListTile(
+                      title: Text('기기 배터리 상태'),
+                      subtitle: Text('${70}%'),
+                      leading: Icon(Icons.battery_4_bar),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Center(
+                    child: ListTile(
+                      title: Text('마지막 세척 일'),
+                      subtitle: Text('${5}일 전'),
+                      leading: Icon(Icons.shower),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Center(
+                    child: ListTile(
+                      title: Text('마지막 동기화'),
+                      subtitle: Text('${3}시간 전'),
+                      leading: Icon(Icons.sync),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
