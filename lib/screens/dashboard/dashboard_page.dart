@@ -20,7 +20,7 @@ class DashBoardPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: ListView(
           children: [
             // 개인 프로필
@@ -54,8 +54,9 @@ class DashBoardPage extends StatelessWidget {
                           image: imageProvider, fit: BoxFit.cover),
                     ),
                   ),
-                  placeholder: (context, url) => CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ],
             ),
