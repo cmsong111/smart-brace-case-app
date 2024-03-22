@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,11 +43,19 @@ class DashBoardPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                      FirebaseAuth.instance.currentUser?.photoURL ??
-                          'https://via.placeholder.com/150'),
+                CachedNetworkImage(
+                  imageUrl: FirebaseAuth.instance.currentUser!.photoURL!,
+                  imageBuilder: (context, imageProvider) => Container(
+                    width: 80.0,
+                    height: 80.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: imageProvider, fit: BoxFit.cover),
+                    ),
+                  ),
+                  placeholder: (context, url) => CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
               ],
             ),
