@@ -9,14 +9,10 @@ class StatisticsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Statistics'),
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 10, 0),
         child: ListView(
-          // widget align at the center
-
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,10 +20,12 @@ class StatisticsPage extends StatelessWidget {
                 Icon(Icons.receipt_long, size: 100, color: Colors.grey[300]),
               ],
             ),
-            Text("${FirebaseAuth.instance.currentUser!.displayName} 님의 통계",
-                style: Theme.of(context).textTheme.headlineSmall),
             Text(
-              "2021.10.01 - 2021.10.07",
+              "${FirebaseAuth.instance.currentUser!.displayName} 님의 통계",
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            Text(
+              "2024.04.26 - 2024.05.03",
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 10),

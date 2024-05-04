@@ -12,28 +12,19 @@ class DashBoardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
-        title: Image.asset(
-          'assets/images/logo.png',
-          height: 40,
-        ),
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: ListView(
           children: [
             // 개인 프로필
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Hello",
-                      style: TextStyle(fontSize: 20, color: Colors.grey),
-                    ),
                     Text(
                       "${FirebaseAuth.instance.currentUser?.displayName}님 안녕하세요",
                       style: const TextStyle(
@@ -99,53 +90,29 @@ class DashBoardPage extends StatelessWidget {
               style: Theme.of(context).textTheme.headline5,
             ),
             const SizedBox(height: 10),
-            GridView.count(
-              shrinkWrap: true,
-              crossAxisCount: 2,
-              mainAxisSpacing: 5,
-              crossAxisSpacing: 5,
-              childAspectRatio: 2.5,
-              children: const <Widget>[
-                Card(
-                  child: Center(
-                    child: ListTile(
-                      title: Text('교정기 종류'),
-                      subtitle: Text('치아 유지 장치'),
-                      leading: Icon(Icons.widgets),
-                      isThreeLine: true,
-                    ),
-                  ),
-                ),
-                Card(
-                  child: Center(
-                    child: ListTile(
-                      title: Text('기기 배터리 상태'),
-                      subtitle: Text('${70}%'),
-                      leading: Icon(Icons.battery_4_bar),
-                    ),
-                  ),
-                ),
-                Card(
-                  child: Center(
-                    child: ListTile(
-                      title: Text('마지막 세척 일'),
-                      subtitle: Text('${5}일 전'),
-                      leading: Icon(Icons.shower),
-                    ),
-                  ),
-                ),
-                Card(
-                  child: Center(
-                    child: ListTile(
-                      title: Text('마지막 동기화'),
-                      subtitle: Text('${3}시간 전'),
-                      leading: Icon(Icons.sync),
-                    ),
-                  ),
-                ),
-              ],
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.widgets),
+                title: Text('교정기 종류'),
+                subtitle: Text('치아 유지 장치'),
+              ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 5),
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.battery_4_bar),
+                title: Text('기기 배터리 상태'),
+                subtitle: Text('${70} %'),
+              ),
+            ),
+            const SizedBox(height: 5),
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.widgets),
+                title: Text('마지막 동기화'),
+                subtitle: Text('${3}시간 전'),
+              ),
+            ),
           ],
         ),
       ),
